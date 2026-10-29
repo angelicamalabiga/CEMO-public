@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App -->
+    <string name="app_name">CEMO</string>
+    <string name="todo">TODO</string>
+
+    <!-- Bottom Nav -->
+    <string name="home">Home</string>
+    <string name="rewards">Rewards</string>
+    <string name="settings">Settings</string>
+
+    <!-- Signup / Register -->
+    <string name="signup_title">Create new\nAccount</string>
+    <string name="signup_label_name">NAME</string>
+    <string name="signup_hint_name">Name</string>
+    <string name="signup_label_barangay">BARANGAY</string>
+    <string name="signup_label_contact">CONTACT NO.</string>
+    <string name="signup_hint_contact">Contact No.</string>
+    <string name="signup_label_email">EMAIL</string>
+    <string name="signup_hint_email">Email</string>
+    <string name="signup_label_password">PASSWORD</string>
+    <string name="signup_hint_password">Password</string>
+    <string name="signup_label_confirm_password">CONFIRM PASSWORD</string>
+    <string name="signup_hint_confirm_password">Confirm Password</string>
+    <string name="signup_btn_register">Register</string>
+    <string name="signup_already_have_account">Already have an account? </string>
+    <string name="signup_login_link">Login</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="email">EMAIL</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password">PASSWORD</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="google_logo">Google logo</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">  Sign Up</string>
+
+    <!-- Home Screen -->
+    <string name="your_environmental_impact">Your Environmental Impact</string>
+    <string name="member_id_gp_10245">Member ID: GP-10245</string>
+    <string name="total_green_points_213_pts">Total Green Points: 0 pts</string>
+    <string name="waste_recycled_5_4kg">Waste Recycled: 0kg</string>
+  <!--  <string name="reduced_3_3kg">Waste Reduced: 0kg</string> -->
+    <string name="wednesday_march_30_2026">DATE</string>
+    <string name="_8_00_pm">TIME</string>
+    <string name="scan_qr_to_recycle">SCAN QR FOR TRANSACTION</string>
+    <string name="recycling_records">RECYCLING RECORDS</string>
+    <string name="home_start">Start</string>
+    <string name="home_end">End</string>
+    <string name="home_click_start">Start Transaction</string>
+
+    <!-- Recycling Records -->
+    <string name="february_21">February 21</string>
+    <string name="february_22">February 22</string>
+    <string name="february_23">February 23</string>
+    <string name="_0_5kg">0.5kg</string>
+    <string name="_3kg">3kg</string>
+    <string name="_7kg">7kg</string>
+    <string name="plastic_bottles">Plastic Bottles</string>
+    <string name="paper">Paper</string>
+    <string name="cardboard">Cardboard</string>
+    <string name="_3_pts">+ 3 pts</string>
+    <string name="_14_pts">+ 14 pts</string>
+    <string name="_8_pts">+ 8 pts</string>
+    <string name="_22_pts">+ 22 pts</string>
+    <string name="view_full_history">View Full History</string>
+    <string name="DOWN">&#9660; View Less</string>
+    <string name="full_history">&#9650; View Full History</string>
+
+    <!-- Rewards -->
+    <string name="available_rewards">AVAILABLE REWARDS</string>
+    <string name="total_points_120_pts">Total Points: 120 pts</string>
+    <string name="seeds_packets">Seeds Packets</string>
+    <string name="eco_tote_bag">Eco Tote Bag</string>
+    <string name="reusable_water_bottle">Reusable Water Bottle</string>
+    <string name="_15_pts">15 pts</string>
+    <string name="_50_pts">50 pts</string>
+    <string name="_80_pts">80 pts</string>
+    <string name="claim">Claim</string>
+    <string name="claimm">Claim</string>
+    <string name="claimmm">Claim</string>
+    <string name="mark_all_read">Mark all read</string>
+    <string name="sort_by_time">Sort by time ▼</string>
+    <string name="hello">Hello!</string>
+
+    <!-- Edit Profile -->
+    <string name="back">Back</string>
+    <string name="your_name">Your Name</string>
+    <string name="editprof">Edit Profile</string>
+    <string name="changephoto">Change Photo</string>
+    <string name="label_name">Name</string>
+    <string name="hint_name">Enter your name</string>
+    <string name="label_barangay">Barangay</string>
+    <string name="label_contact">Contact No.</string>
+    <string name="hint_contact">Enter your contact number</string>
+    <string name="btn_save">Save And Continue</string>
+
+    <!-- Edit Profile - Date of Birth -->
+    <string name="label_dob">Date of Birth</string>
+    <string name="hint_dob">MM/DD/YYYY</string>
+
+    <!-- Edit Profile - Complete Home Address -->
+    <string name="label_address">Complete Home Address</string>
+    <string name="hint_address">Enter your complete address</string>
+
+    <!-- Settings - Profile -->
+    <string name="settings_edit_profile">Edit Profile</string>
+    <string name="settings_verify_id">Verify your ID</string>
+    <string name="settings_resubmit_id">Re-submit ID</string>
+
+
+    <!-- Settings - Menu Items -->
+    <string name="settings_qr_scan">QR Scanner</string>
+    <string name="settings_privacy_data">Privacy &amp; Data</string>
+    <string name="settings_app_preferences">App Preferences</string>
+    <string name="settings_support">Support</string>
+    <string name="settings_about">About</string>
+    <string name="settings_logout">Log Out</string>
+
+    <!-- Settings - Verify Status -->
+    <string name="settings_verify_status_pending">Verification Pending</string>
+    <string name="settings_verify_status_verified">ID Verified</string>
+    <string name="settings_verify_status_rejected">Verification Failed</string>
+
+    <!-- Settings - Accessibility -->
+    <string name="desc_qr_scan">QR and Scan</string>
+    <string name="desc_privacy">Privacy and Data</string>
+    <string name="desc_preferences">App Preferences</string>
+    <string name="desc_support">Support</string>
+    <string name="desc_about">About</string>
+    <string name="desc_logout">Log Out</string>
+    <string name="desc_arrow_right">Navigate</string>
+    <string name="desc_verify_status">Verification status</string>
+    <string name="desc_verify_icon">Verification</string>
+
+
+    <!-- App Preferences -->
+    <string name="pref_toolbar_title">App Preferences</string>
+    <string name="pref_section_appearance">Appearance</string>
+    <string name="pref_section_notifications">Notifications</string>
+    <string name="pref_section_device_settings">Device Settings</string>
+    <string name="pref_section_data_tracking">Data &amp; Tracking</string>
+    <string name="pref_section_rewards">Points</string>
+    <string name="pref_section_sound_feedback">Sound &amp; Feedback</string>
+    <string name="pref_section_system">Recycling History</string>
+    <string name="pref_dark_mode">Dark Mode</string>
+    <string name="pref_enable_notifications">Enable Notifications</string>
+    <string name="pref_auto_connect">Auto-connect</string>
+    <string name="pref_device_status">Device Status</string>
+    <string name="pref_device_status_connected">Connected</string>
+    <string name="pref_save_recycling_history">Save Recycling History</string>
+    <string name="pref_rewards_notifications">Rewards Notifications</string>
+    <string name="pref_show_points_balance">Show Points Balance</string>
+    <string name="pref_sound_effects">Sound Effects</string>
+    <string name="pref_vibration">Vibration</string>
+    <string name="pref_clear_recycling_history">Clear Recycling Records</string>
+    <string name="pref_reset_app_settings">Reset App Settings</string>
+
+    <!-- ACCOUNT SECURITY -->
+    <string name="settings_account_security">Account &amp; Security</string>
+    <string name="settings_change_password">Change Password</string>
+    <string name="desc_account_security">Account and security icon</string>
+    <string name="hint_current_password">Current Password</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_confirm_password">Retype New Password</string>
+    <string name="forgot_password_question">Forgot your password?</string>
+
+
+    <string name="hint_enter_current_password">Enter your current password</string>
+
+
+    <!-- About -->
+    <string name="about_app_name">Green Points</string>
+    <string name="about_tagline">Rewarding Sustainability, One Point at a Time</string>
+    <string name="about_desc_1">Green Points is a mobile-based platform designed to support and enhance the waste management initiatives of Marikina City, led by the City Environmental Management Office (CEMO). The application promotes proper waste segregation and recycling by integrating a reward-based system that encourages active community participation.</string>
+    <string name="about_desc_2">By combining technology and environmental programs, Green Points allows users to earn points through responsible waste disposal practices. These points can be redeemed for rewards, making sustainability more engaging, accessible, and motivating for residents.</string>
+    <string name="about_desc_3">The platform builds upon Marikina\'s existing system by introducing real-time monitoring, digital tracking, and gamification features that align with modern lifestyles. It aims to strengthen environmental awareness, encourage consistent participation, and support the city\'s vision of sustainable urban development.</string>
+    <string name="about_how_it_works_title">How It Works</string>
+    <string name="about_step_1">Participate in proper waste segregation and recycling</string>
+    <string name="about_step_2">Scan or log your activity through the system</string>
+    <string name="about_step_3">Earn points for your contributions</string>
+    <string name="about_step_4">Redeem rewards and track your progress</string>
+    <string name="about_developed_for_label">Developed for</string>
+    <string name="about_developed_for_value">City Environmental Management Office (CEMO), Marikina City</string>
+    <string name="about_version_label">Version</string>
+    <string name="about_version_value">1.0</string>
+    <string name="about_year_label">Year</string>
+    <string name="about_year_value">2026</string>
+
+    <string name="about">About</string>
+
+
+    <string name="num1">1</string>
+    <string name="num2">2</string>
+    <string name="num3">3</string>
+    <string name="num4">4</string>
+
+
+
+    <!-- Support -->
+    <string name="support_title">Support</string>
+    <string name="support_section_faq">Help Center / FAQ</string>
+    <string name="support_section_contact">Contact Support</string>
+    <string name="support_section_terms">Terms &amp; Disclaimer</string>
+    <string name="faq_q1">How do I start recycling?</string>
+    <string name="faq_q2">How do I earn points?</string>
+    <string name="faq_q3">How do I claim rewards?</string>
+    <string name="faq_q4">Why didn\'t my points update?</string>
+    <string name="faq_a1">Press the Start button on the smart bin hardware, then place your recyclables one at a time into the bin. Once done, press the End button — a QR code will appear on the LCD screen. Open the CEMO app and scan the QR code to receive your points.</string>
+    <string name="faq_a2">Points are earned after completing a recycling session and scanning the session QR code.</string>
+    <string name="faq_a3">Go to the Rewards section, choose a reward, and show your unique code to the admin.</string>
+    <string name="faq_a4">Make sure you scanned the correct session QR and that your internet connection is stable.</string>
+    <string name="support_contact_intro">If you need assistance, you may contact us:</string>
+    <string name="support_contact_label">Email</string>
+    <string name="support_contact_email">support@cemo.ph</string>
+    <string name="support_contact_note">You may send us a message with your concern, and we will assist you as soon as possible.</string>
+    <string name="support_terms_1">All recycling activities and points are recorded for verification purposes.</string>
+    <string name="support_terms_2">Points earned are non-transferable and cannot be exchanged unless specified.</string>
+    <string name="support_terms_3">Any misuse of the system may result in account restrictions.</string>
+    <string name="support_cd_email_icon">Email</string>
+    <string name="support_cd_open_icon">Open</string>
+    <string name="support_cd_back">Back</string>
+
+    <!-- Privacy & Data -->
+    <string name="privacy_toolbar_title">Privacy &amp; Data</string>
+    <string name="privacy_back_desc">Go back</string>
+    <string name="privacy_intro_title">Our Commitment to Your Privacy</string>
+    <string name="privacy_intro_body">CEMO, developed for the City Environmental Management Office (CEMO) of Marikina City, is committed to safeguarding the privacy and personal information of its users. This Privacy Policy sets out how we collect, use, store, and protect the data you provide while using our application. By continuing to use the CEMO application, you acknowledge that you have read and agreed to the practices described in this policy.</string>    <string name="privacy_section_collect">Data We Collect</string>
+    <string name="privacy_section_use">How We Use Your Data</string>
+    <string name="privacy_section_sharing">Data Sharing</string>
+    <string name="privacy_section_retention">Data Retention</string>
+    <string name="privacy_section_rights">Your Rights</string>
+    <string name="privacy_section_security">Security</string>
+    <string name="privacy_section_contact">Contact Us</string>
+    <string name="privacy_collect_body">To provide and continuously improve our services, we collect the following categories of information:\n\n
+        &#8226; Personal Information — your name, email address, contact number, and barangay, provided during account registration.\n\n
+        &#8226; Profile Photo — an optional image you may upload to personalize your account.\n\n
+        &#8226; Recycling Activity — records of your recycling submissions, Green Points earned, and rewards claimed.\n\n
+        &#8226; Device Information — basic technical data, such as operating system version, used to maintain app compatibility and performance.\n\n
+        &#8226; Usage Data — general interaction data, including screens visited and features used, to help us enhance the overall user experience.</string>
+    <string name="privacy_use_body">The information we collect is used exclusively for the following purposes:\n\n
+        &#8226; To create, maintain, and manage your CEMO account.\n\n
+        &#8226; To accurately track recycling activity and calculate Green Points earned.\n\n
+        &#8226; To process reward claims and verify user eligibility.\n\n
+        &#8226; To deliver relevant notifications regarding your account, recycling events, and reward updates.\n\n
+        &#8226; To improve the functionality, usability, and overall performance of the application.\n\n
+        &#8226; To fulfill legal obligations and address any disputes that may arise in connection with the service.</string>
+    <string name="privacy_sharing_body">CEMO does not sell, rent, or trade your personal information to third parties. Your data may only be disclosed under the following limited circumstances:\n\n
+        &#8226; Local Government Reporting — aggregated, non-identifiable recycling data may be shared with barangay authorities to support community-level environmental programs.\n\n
+        &#8226; Trusted Service Providers — we engage reputable third-party infrastructure providers, such as Firebase by Google, to securely store and process data on our behalf. All such providers are bound by strict confidentiality and data protection obligations.\n\n
+        &#8226; Legal Compliance — we may disclose information where required by applicable law or in response to a valid request from a competent public authority.</string>
+    <string name="privacy_retention_body">We retain your personal data for as long as your account remains active or as necessary to provide our services. If you submit a request to delete your account:\n\n
+        &#8226; Your account will enter a 30-day grace period, during which it will be deactivated and inaccessible for use.\n\n
+        &#8226; You may reactivate your account at any time within this 30-day period simply by logging in again.\n\n
+        &#8226; If no action is taken within the 30-day period, your account and associated personal data will be permanently and irreversibly deleted from our active systems.\n\n
+        &#8226; Certain recycling activity records may be retained in anonymized form for statistical and environmental reporting purposes, in compliance with local government requirements.</string>
+    <string name="privacy_rights_body">As a CEMO user, you are entitled to the following rights concerning your personal data:\n\n
+        &#8226; Right to Access — you may request a copy of the personal data we hold on your behalf.\n\n
+        &#8226; Right to Correction — you may update or correct your information at any time via the Edit Profile page.\n\n
+        &#8226; Right to Deletion — you may initiate a request to delete your account and personal data at any time through the app, subject to the 30-day grace period described above.\n\n
+        &#8226; Right to Withdraw Consent — you may withdraw your consent to data processing at any time, which may limit access to certain features of the application.\n\n
+        &#8226; Right to Data Portability — you may request that your personal data be provided in a structured, commonly used, and machine-readable format.\n\n
+        To exercise any of these rights, please contact us using the details provided below.</string>
+    <string name="privacy_security_body">CEMO takes the security of user data seriously and implements the following measures to safeguard your information:\n\n
+        &#8226; All data is stored using Google Firebase, which employs industry-standard encryption both at rest and in transit.\n\n
+        &#8226; Passwords are never stored in plain text and are managed securely through Firebase Authentication.\n\n
+        &#8226; Access to user data is restricted to authorized personnel only, on a need-to-know basis.\n\n
+        &#8226; Our data handling practices are reviewed on an ongoing basis to align with current security standards.\n\n
+        While we take reasonable measures to protect your information, no method of electronic transmission or storage can be guaranteed to be completely secure. We encourage all users to maintain a strong, unique password for their account.</string>
+    <string name="privacy_contact_body">Should you have any questions, concerns, or requests regarding this Privacy Policy or the handling of your personal data, please contact us through the following channels:\n\n
+        &#8226; Email: cemo.marikina.ph@gmail.com\n\n
+        &#8226; Address: City Environmental Management Office (CEMO), Marikina City, Metro Manila, Philippines\n\n
+        We endeavor to respond to all privacy-related inquiries within five (5) to seven (7) business days.</string>
+    <string name="privacy_last_updated">Last updated: April 7, 2026</string>
+    <string name="privacy_btn_understand">I Understand</string>
+    <string name="privacy_btn_understand_toast">Thank you for reading our Privacy Policy.</string>
+
+
+
+    <!-- Barangay List -->
+    <string-array name="baranggay_list">
+        <item>[Select Barangay]</item>
+        <!-- District I -->
+        <item>Barangka</item>
+        <item>Tañong</item>
+        <item>Jesus dela Peña</item>
+        <item>Industrial Valley Complex</item>
+        <item>Kalumpang</item>
+        <item>San Roque</item>
+        <item>Sta. Elena</item>
+        <item>Sto. Niño</item>
+        <item>Malanday</item>
+        <!-- District II -->
+        <item>Concepcion I</item>
+        <item>Concepcion II</item>
+        <item>Nangka</item>
+        <item>Parang</item>
+        <item>Marikina Heights</item>
+        <item>Fortune</item>
+        <item>Tumana</item>
+    </string-array>
+
+</resources>

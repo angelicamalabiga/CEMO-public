@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_arrow_left"
+            android:contentDescription="@string/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/editprof"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#1A2E4A"
+            android:textSize="16sp"
+            android:gravity="center" />
+
+        <!-- Spacer to balance the back arrow -->
+        <View
+            android:layout_width="28dp"
+            android:layout_height="28dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Photo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/prof_icon"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/CircleImageView"
+                        app:strokeColor="#C0D0E0"
+                        app:strokeWidth="2dp" />
+
+                    <!-- Camera Badge -->
+                    <LinearLayout
+                        android:id="@+id/btnChangePhoto"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/circle_white_bg"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_camera"
+                            android:contentDescription="@string/changephoto" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!-- Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:hint="@string/hint_name"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textColorHint="#AAAAAA"
+                android:textSize="14sp"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp"
+                android:autofillHints="name"
+                android:inputType="textPersonName" />
+
+            <!-- Date of Birth -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_dob"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etDob"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:hint="@string/hint_dob"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textColorHint="#AAAAAA"
+                android:textSize="14sp"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="text" />
+
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:hint="@string/enter_your_email"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textColorHint="#AAAAAA"
+                android:textSize="14sp"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress" />
+
+            <!-- Barangay -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_barangay"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spBarangay"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:padding="14dp"
+                android:layout_marginBottom="18dp"
+                android:minHeight="48dp" />
+
+            <!-- Complete Home Address -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_address"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:hint="@string/hint_address"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textColorHint="#AAAAAA"
+                android:textSize="14sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:layout_marginBottom="18dp"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+
+            <!-- Contact No -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_contact"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etContact"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_textbox_white"
+                android:hint="@string/hint_contact"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#1A2E4A"
+                android:textColorHint="#AAAAAA"
+                android:textSize="14sp"
+                android:maxLength="11"
+                android:padding="14dp"
+                android:layout_marginBottom="32dp"
+                android:autofillHints="phone"
+                android:inputType="phone" />
+
+            <!-- Save Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/btn_save"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:background="@drawable/btn_bg"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

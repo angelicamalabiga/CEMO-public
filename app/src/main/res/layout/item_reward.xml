@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single reward card — matches existing rewards_item_bg style -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/rewards_item_bg"
+    android:padding="14dp"
+    android:layout_marginBottom="10dp">
+
+    <!-- Left: name, points, desc, stock, expiry -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Reward Name -->
+        <TextView
+            android:id="@+id/tvRewardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Eco Tote Bag"/>
+
+        <!-- Points Required -->
+        <TextView
+            android:id="@+id/tvRewardPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            tools:text="50 pts"/>
+
+        <!-- Description (shows if not empty) -->
+        <TextView
+            android:id="@+id/tvRewardDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#CCFFFFFF"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp"
+            tools:text="Reusable eco-friendly bag"/>
+
+        <!-- Stock Status -->
+        <TextView
+            android:id="@+id/tvRewardStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="11sp"
+            android:layout_marginTop="3dp"
+            tools:text="In Stock: 20"/>
+
+        <!-- Expiry (hidden if no expiry) -->
+        <TextView
+            android:id="@+id/tvRewardExpiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#CCFFFFFF"
+            android:textSize="10sp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone"
+            tools:text="Expires: 2025-12-31"/>
+
+    </LinearLayout>
+
+    <!-- Right: Claim button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClaimReward"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:background="@drawable/rewards_claim_bg"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="Claim"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"/>
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="8dp">
+
+    <EditText
+        android:id="@+id/etOtp1"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etOtp2"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etOtp3"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etOtp4"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etOtp5"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etOtp6"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:inputType="number"
+        
+        android:textSize="20sp"
+        android:background="@drawable/rounded_textbox"
+        android:textColor="#000000"
+        android:importantForAutofill="no" />
+
+</LinearLayout>

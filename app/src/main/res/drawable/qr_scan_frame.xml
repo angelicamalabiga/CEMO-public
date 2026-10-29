@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Top-Left Corner -->
+    <item>
+        <clip android:clipOrientation="horizontal" android:gravity="right">
+            <clip android:clipOrientation="vertical" android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <stroke android:width="4dp" android:color="#FFFFFF" />
+                    <corners android:topLeftRadius="12dp" />
+                    <size android:width="40dp" android:height="40dp" />
+                </shape>
+            </clip>
+        </clip>
+    </item>
+
+    <!-- Top-Right Corner -->
+    <item android:gravity="top|right">
+        <clip android:clipOrientation="horizontal" android:gravity="left">
+            <clip android:clipOrientation="vertical" android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <stroke android:width="4dp" android:color="#FFFFFF" />
+                    <corners android:topRightRadius="12dp" />
+                    <size android:width="40dp" android:height="40dp" />
+                </shape>
+            </clip>
+        </clip>
+    </item>
+
+    <!-- Bottom-Left Corner -->
+    <item android:gravity="bottom|left">
+        <clip android:clipOrientation="horizontal" android:gravity="right">
+            <clip android:clipOrientation="vertical" android:gravity="top">
+                <shape android:shape="rectangle">
+                    <stroke android:width="4dp" android:color="#FFFFFF" />
+                    <corners android:bottomLeftRadius="12dp" />
+                    <size android:width="40dp" android:height="40dp" />
+                </shape>
+            </clip>
+        </clip>
+    </item>
+
+    <!-- Bottom-Right Corner -->
+    <item android:gravity="bottom|right">
+        <clip android:clipOrientation="horizontal" android:gravity="left">
+            <clip android:clipOrientation="vertical" android:gravity="top">
+                <shape android:shape="rectangle">
+                    <stroke android:width="4dp" android:color="#FFFFFF" />
+                    <corners android:bottomRightRadius="12dp" />
+                    <size android:width="40dp" android:height="40dp" />
+                </shape>
+            </clip>
+        </clip>
+    </item>
+
+</layer-list>

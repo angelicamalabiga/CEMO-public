@@ -1,0 +1,30 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- WHITE BACKGROUND (base) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- BLUE GRADIENT -->
+    <item
+        android:height="800dp"
+        android:gravity="top">
+
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#243e6d"
+                android:endColor="#111322"
+                android:angle="270" />
+
+            <corners
+                android:topLeftRadius="40dp"
+                android:topRightRadius="40dp"
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp"/>
+        </shape>
+
+    </item>
+
+</layer-list>

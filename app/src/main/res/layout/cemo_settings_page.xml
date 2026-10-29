@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <!-- PROFILE SECTION -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/settings_prof_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:cardCornerRadius="40dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C0D0E0"
+                    app:strokeWidth="2dp">
+
+                    <ImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/prof_icon"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/your_name"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivVerifiedBadge"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginBottom="3dp"
+                        android:src="@drawable/ic_verified_badge"
+                        android:visibility="gone"
+                        android:contentDescription="@string/desc_verify_icon" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProfileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#C0D0E0"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/settings_edit_profile"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnVerifyId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="14dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/settings_verify_id"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="12sp"
+                    android:textColor="#1A2E4A"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@null"
+                    android:drawableStart="@null"
+                    android:background="@drawable/verify_btn_bg"
+                    android:stateListAnimator="@null"
+                    app:backgroundTint="@null"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/layoutVerifyStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:id="@+id/ivVerifyStatusIcon"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_privacy"
+                        android:layout_marginEnd="5dp"
+                        android:contentDescription="@string/desc_verify_status" />
+
+                    <TextView
+                        android:id="@+id/tvVerifyStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"
+                        android:textColor="#C0D0E0" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- QR Scanner -->
+            <LinearLayout
+                android:id="@+id/rowQrScan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_qr"
+                    android:contentDescription="@string/desc_qr_scan" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_qr_scan"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#1A2E4A"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+
+
+            <!-- PRIVACY -->
+            <LinearLayout
+                android:id="@+id/rowPrivacyData"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_privacy"
+                    android:contentDescription="@string/desc_privacy" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_privacy_data"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#1A2E4A"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+            <!-- CHANGE PASSWORD -->
+            <LinearLayout
+                android:id="@+id/rowChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_lock"
+                    android:contentDescription="@string/desc_account_security" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_change_password"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#1A2E4A"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+            <!-- APP PREFERENCES -->
+            <LinearLayout
+                android:id="@+id/rowAppPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_preferences"
+                    android:contentDescription="@string/desc_preferences" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_app_preferences"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#1A2E4A"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+            <!-- SUPPORT -->
+            <LinearLayout
+                android:id="@+id/rowSupport"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_support"
+                    android:contentDescription="@string/desc_support"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_support"
+                    android:textColor="#1A2E4A"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+            <!-- ABOUT -->
+            <LinearLayout
+                android:id="@+id/rowAbout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_about"
+                    android:contentDescription="@string/desc_about" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_about"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#1A2E4A"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:contentDescription="@string/desc_arrow_right" />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+            <!-- LOG OUT -->
+            <LinearLayout
+                android:id="@+id/logoutRow"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:src="@drawable/ic_logout"
+                    android:contentDescription="@string/desc_logout" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_logout"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#E53935"
+                    android:textSize="15sp"
+                    android:layout_marginStart="14dp" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8E8E8" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Floating Nav Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/nav_floating_bg"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Home Tab -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="6dp"
+            >
+
+            <ImageView
+                android:id="@+id/iconHome"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_home"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/labelHome"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/home"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#332d2d"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <!-- Rewards Tab -->
+        <LinearLayout
+            android:id="@+id/navRewards"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="6dp"
+            >
+
+            <ImageView
+                android:id="@+id/iconRewards"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_rewards"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/labelRewards"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/rewards"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#332d2d"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <!-- Settings Tab -->
+        <LinearLayout
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/nav_active_bg"
+            android:minHeight="48dp"
+            android:layout_margin="6dp" >
+
+            <ImageView
+                android:id="@+id/iconSettings"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_settings"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/labelSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/settings"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

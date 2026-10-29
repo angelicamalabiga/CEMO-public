@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required for Firebase -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Add this permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CEMO_LOGINPAGE">
+
+        <!-- LOGIN is the launcher activity -->
+        <activity
+            android:name=".LoginPageCemo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SignupPageCemo" android:exported="false"/>
+        <activity android:name=".HomePageCemo" android:exported="false"/>
+        <activity android:name=".RewardsPageCemo" android:exported="false"/>
+        <activity android:name=".SettingsPageCemo" android:exported="false"/>
+        <activity android:name=".NotificationPageCemo" android:exported="false"/>
+        <activity android:name=".EditProfilePageCemo" android:exported="false"/>
+        <activity android:name=".AppPreferencesPageCemo" android:exported="false"/>
+        <activity android:name=".PrivacyDataPageCemo" android:exported="false"/>
+        <activity android:name=".AboutPageCemo" android:exported="false"/>
+        <activity android:name=".SupportPageCemo" android:exported="false"/>
+        <activity android:name=".VerificationIntroPageCemo" android:exported="false"/>
+        <activity android:name=".VerificationFormPageCemo" android:exported="false"/>
+
+        <activity android:name=".QrScannerActivity" android:exported="false"/>
+
+        <activity android:name=".CompleteProfileActivity" />
+
+    </application>
+
+</manifest>
