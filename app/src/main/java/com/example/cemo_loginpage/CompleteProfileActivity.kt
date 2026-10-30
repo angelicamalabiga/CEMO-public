@@ -98,8 +98,12 @@ class CompleteProfileActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (contact.length != 11) {
+            if (contact.length != 11 || !contact.all { it.isDigit() }) {
                 Toast.makeText(this, "Contact number must be 11 digits", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (!PhoneNumberHelper.isValidPhMobile(contact)) {
+                Toast.makeText(this, "Please enter a valid Philippine mobile number.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
