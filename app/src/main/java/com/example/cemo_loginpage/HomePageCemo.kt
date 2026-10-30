@@ -64,6 +64,7 @@ class HomePageCemo : AppCompatActivity() {
         auth.currentUser?.uid?.let {
             checkAndExpirePoints(it)
             checkPointsExpiringSoon(it)
+            ClaimNotifier.start(this, it)
         }
     }
 
@@ -117,35 +118,12 @@ class HomePageCemo : AppCompatActivity() {
             insets
         }
 
-        // Expand / Collapse white card
-        val topSection        = findViewById<LinearLayout>(R.id.topSection)
-        val whiteCard         = findViewById<FrameLayout>(R.id.whiteCard)
-        val staticContent     = findViewById<LinearLayout>(R.id.staticContent)
-        val expandedContent   = findViewById<LinearLayout>(R.id.expandedContent)
-        val tvViewFullHistory = findViewById<TextView>(R.id.tvViewFullHistory)
-        val btnCollapse       = findViewById<TextView>(R.id.btnCollapse)
-
-        tvViewFullHistory.setOnClickListener {
-            val screenHeight = resources.displayMetrics.heightPixels
-            val expand = ValueAnimator.ofInt(whiteCard.height, screenHeight)
-            expand.duration = 300
-            expand.interpolator = DecelerateInterpolator()
-            expand.addUpdateListener { animation ->
-                val params = whiteCard.layoutParams
-                params.height = animation.animatedValue as Int
-                whiteCard.layoutParams = params
-            }
-            expand.addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator) {
-                    topSection.visibility = android.view.View.GONE
-                }
-                override fun onAnimationEnd(animation: Animator) {
-                    staticContent.visibility = android.view.View.GONE
-                    expandedContent.visibility = android.view.View.VISIBLE
-                }
-            })
-            expand.start()
+        // View Full History → separate page
+        findViewById<TextView>(R.id.tvViewFullHistory).setOnClickListener {
+            startActivity(Intent(this, TransactionHistoryActivity::class.java))
         }
+
+
 
         // QR Scan Button
         val btnScanQr = findViewById<LinearLayout>(R.id.btnScanQr)
@@ -153,32 +131,7 @@ class HomePageCemo : AppCompatActivity() {
             checkVerificationBeforeScan()
         }
 
-        btnCollapse.setOnClickListener {
-            val screenHeight = resources.displayMetrics.heightPixels
-            val collapsedHeight = (screenHeight * 0.55f).toInt()
-            val collapse = ValueAnimator.ofInt(whiteCard.height, collapsedHeight)
-            collapse.duration = 300
-            collapse.interpolator = DecelerateInterpolator()
-            collapse.addUpdateListener { animation ->
-                val params = whiteCard.layoutParams
-                params.height = animation.animatedValue as Int
-                whiteCard.layoutParams = params
-            }
-            collapse.addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator) {
-                    expandedContent.visibility = android.view.View.GONE
-                    staticContent.visibility = android.view.View.VISIBLE
-                }
-                override fun onAnimationEnd(animation: Animator) {
-                    topSection.visibility = android.view.View.VISIBLE
-                    val params = whiteCard.layoutParams as LinearLayout.LayoutParams
-                    params.height = 0
-                    params.weight = 1f
-                    whiteCard.layoutParams = params
-                }
-            })
-            collapse.start()
-        }
+
 
         // Bottom Navigation
         navHome     = findViewById(R.id.navHome)
@@ -321,7 +274,7 @@ class HomePageCemo : AppCompatActivity() {
                 if (error != null || document == null || !document.exists()) return@addSnapshotListener
                 val totalPoints = document.getDouble("greenPoints") ?: 0.0
                 findViewById<TextView>(R.id.total_points)?.text =
-                    "Total Green Points: ${totalPoints.toInt()} pts"
+                    "Total Green Points: ${String.format("%.2f", totalPoints)} pts"
             }
     }
     private fun checkAndExpirePoints(uid: String) {
@@ -444,7 +397,7 @@ class HomePageCemo : AppCompatActivity() {
                                     .collection("notifications").document()
                                 tx.set(notifRef, hashMapOf(
                                     "title"     to "Points Expired",
-                                    "message"   to "${totalExpiredPoints.toInt()} pts have expired and were removed from your balance.",
+                                    "message"   to "${String.format("%.2f", totalExpiredPoints)} pts have expired and were removed from your balance.",
                                     "type"      to "points_expired",
                                     "timestamp" to System.currentTimeMillis(),
                                     "isRead"    to false
@@ -515,11 +468,11 @@ class HomePageCemo : AppCompatActivity() {
                             if (batch.totalRemaining <= 0.0) return@forEach
 
                             val daysLeft = ((batch.expiryDate.time - now.time) / (1000 * 60 * 60 * 24)).toInt()
-                            val remainingAmount = batch.totalRemaining.toInt()
+                            val remainingAmount = batch.totalRemaining
 
                             // ── Reminder window: 0-3 days before expiry, once per day-count AND per remaining amount ──
                             if (daysLeft in 0..3) {
-                                val key = "points_expiring_notif_${uid}_${batchKey}_d${daysLeft}_amt${remainingAmount}"
+                                val key = "points_expiring_notif_${uid}_${batchKey}_d${daysLeft}_amt${String.format("%.2f", remainingAmount)}"
                                 if (!prefs.getBoolean(key, false)) {
                                     NotificationHelper.pointsExpiringSoon(
                                         this, uid, remainingAmount, daysLeft.coerceAtLeast(1)
@@ -561,7 +514,6 @@ class HomePageCemo : AppCompatActivity() {
 
     private fun loadRecyclingRecords(uid: String) {
         val recordsContainer  = findViewById<LinearLayout>(R.id.staticRecordsContainer)
-        val expandedContainer = findViewById<LinearLayout>(R.id.expandedRecordsContainer)
 
         recordsListener?.remove()
         recordsListener = db.collection("users").document(uid)
@@ -617,20 +569,8 @@ class HomePageCemo : AppCompatActivity() {
                     empty.setPadding(0, 24, 0, 24)
                     empty.gravity = android.view.Gravity.CENTER
                     recordsContainer.addView(empty)
-
-                    expandedContainer.removeAllViews()
-                    val empty2 = TextView(this)
-                    empty2.text = "No recycling records yet."
-                    empty2.textSize = 13f
-                    empty2.setTextColor("#A09E9E".toColorInt())
-                    empty2.setPadding(0, 24, 0, 24)
-                    empty2.gravity = android.view.Gravity.CENTER
-                    expandedContainer.addView(empty2)
-
                 } else {
-                    renderGroupedRecords(recordsContainer, visibleDocs)
-                    expandedContainer.removeAllViews()
-                    renderGroupedRecords(expandedContainer, visibleDocs)
+                    renderGroupedRecords(recordsContainer, limitDocsToGroups(visibleDocs, 5))
                 }
             }
     }
@@ -670,10 +610,10 @@ class HomePageCemo : AppCompatActivity() {
         }
 
         val pointsLabel = when {
-            isRewardRefund  -> "+${points.toInt()} pts"
-            isRewardClaim   -> "${points.toInt()} pts"
-            isPointsExpired -> "${points.toInt()} pts"   // already stored as negative
-            else -> "+${points.toInt()} pts"
+            isRewardRefund  -> "+${String.format("%.2f", points)} pts"
+            isRewardClaim   -> "${String.format("%.2f", points)} pts"
+            isPointsExpired -> "${String.format("%.2f", points)} pts"   // already stored as negative
+            else -> "+${String.format("%.2f", points)} pts"
         }
 
         val pointsColor = when {
@@ -880,7 +820,7 @@ class HomePageCemo : AppCompatActivity() {
             row2.gravity = android.view.Gravity.END
 
             val tvPts = TextView(this)
-            tvPts.text = "+${points.toInt()}pts"
+            tvPts.text = "+${String.format("%.2f", points)}pts"
             tvPts.textSize = 11f
             tvPts.setTextColor("#2E7D32".toColorInt())
             tvPts.setTypeface(null, android.graphics.Typeface.BOLD)

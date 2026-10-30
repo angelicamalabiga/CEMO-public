@@ -96,8 +96,12 @@ class SignupPageCemo : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (contact.length != 11) {
+            if (contact.length != 11 || !contact.all { it.isDigit() }) {
                 Toast.makeText(this, "Contact number must be 11 digits", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (!PhoneNumberHelper.isValidPhMobile(contact)) {
+                Toast.makeText(this, "Please enter a valid Philippine mobile number.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             if (password != confirmPassword) {
@@ -106,6 +110,10 @@ class SignupPageCemo : AppCompatActivity() {
             }
             if (password.length < 6) {
                 Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (PasswordStrengthHelper.isWeak(password)) {
+                Toast.makeText(this, "Your password is too weak.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -142,25 +150,7 @@ class SignupPageCemo : AppCompatActivity() {
             return
         }
 
-        var score = 0
-        if (password.length >= 6) score++
-        if (password.length >= 10) score++
-        if (password.any { it.isDigit() }) score++
-        if (password.any { it.isUpperCase() } && password.any { it.isLowerCase() }) score++
-        if (password.any { !it.isLetterOrDigit() }) score++
-
-        val (progress, label, color) = when {
-            score <= 1 -> Triple(25, "Weak password", "#E53935")
-            score in 2..3 -> Triple(60, "Medium password", "#FB8C00")
-            else -> Triple(100, "Strong password", "#43A047")
-        }
-
-        pbPasswordStrength.visibility = android.view.View.VISIBLE
-        tvPasswordStrength.visibility = android.view.View.VISIBLE
-        pbPasswordStrength.progress = progress
-        pbPasswordStrength.progressTintList = android.content.res.ColorStateList.valueOf(color.toColorInt())
-        tvPasswordStrength.text = label
-        tvPasswordStrength.setTextColor(color.toColorInt())
+        PasswordStrengthHelper.bind(password, pbPasswordStrength, tvPasswordStrength)
     }
 
     override fun onResume() {

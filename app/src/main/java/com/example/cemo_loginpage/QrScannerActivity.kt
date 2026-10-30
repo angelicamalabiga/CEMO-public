@@ -204,10 +204,10 @@ class QrScannerActivity : AppCompatActivity() {
 
             totalPoints
         }.addOnSuccessListener { pts ->
-            Toast.makeText(this, "Scanned! +${pts.toInt()} pts added", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Scanned! +${String.format("%.2f", pts)} pts added", Toast.LENGTH_LONG).show()
 
             // ── Log "Recycling Recorded" notification ──
-            NotificationHelper.recyclingRecorded(this, uid, pts.toInt(), capturedWeightG)
+            NotificationHelper.recyclingRecorded(this, uid, pts, capturedWeightG)
 
             finish()
         }.addOnFailureListener { e ->

@@ -70,8 +70,8 @@
     <string name="_8_pts">+ 8 pts</string>
     <string name="_22_pts">+ 22 pts</string>
     <string name="view_full_history">View Full History</string>
-    <string name="DOWN">&#9660; View Less</string>
-    <string name="full_history">&#9650; View Full History</string>
+
+    <string name="full_history">View Full History &gt;</string>
 
     <!-- Rewards -->
     <string name="available_rewards">AVAILABLE REWARDS</string>

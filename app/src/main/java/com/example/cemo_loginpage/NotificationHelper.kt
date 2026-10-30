@@ -93,10 +93,10 @@ object NotificationHelper {
     )
 
     // ── Points Expiring Soon (personal balance) ──
-    fun pointsExpiringSoon(context: Context, uid: String, points: Int, daysLeft: Int) = push(
+    fun pointsExpiringSoon(context: Context, uid: String, points: Double, daysLeft: Int) = push(
         context, uid,
         "Points Expiring Soon ⏰",
-        "$points pts will expire in $daysLeft day${if (daysLeft == 1) "" else "s"}. Recycle more or redeem a reward before they're gone!",
+        "${String.format("%.2f", points)} pts will expire in $daysLeft day${if (daysLeft == 1) "" else "s"}. Recycle more or redeem a reward before they're gone!",
         "points_expiring"
     )
 
@@ -146,10 +146,10 @@ object NotificationHelper {
     )
 
     // ── Recycling Recorded ──
-    fun recyclingRecorded(context: Context, uid: String, points: Int, weightG: Double) = push(
+    fun recyclingRecorded(context: Context, uid: String, points: Double, weightG: Double) = push(
         context, uid,
         "Recycling Recorded ♻️",
-        "Your recycling transaction was added. You earned $points pts for ${String.format("%.1f", weightG)}g recycled.",
+        "Your recycling transaction was added. You earned ${String.format("%.2f", points)} pts for ${String.format("%.1f", weightG)}g recycled.",
         "recycling_recorded"
     )
 

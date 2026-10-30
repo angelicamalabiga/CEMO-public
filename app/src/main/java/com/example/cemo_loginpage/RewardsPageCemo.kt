@@ -119,8 +119,6 @@ class RewardsPageCemo : AppCompatActivity() {
         loadUserName()
         loadUserPoints()
         loadRewards()
-        listenForRejectedClaims()
-        listenForApprovedClaims()
 
     }
 
@@ -137,12 +135,12 @@ class RewardsPageCemo : AppCompatActivity() {
                 if (error != null || document == null || !document.exists()) return@addSnapshotListener
 
                 val pts = when (val raw = document.get("greenPoints")) {
-                    is Double -> raw.toLong()
-                    is Long   -> raw
-                    is Int    -> raw.toLong()
-                    else      -> 0L
+                    is Double -> raw
+                    is Long   -> raw.toDouble()
+                    is Int    -> raw.toDouble()
+                    else      -> 0.0
                 }
-                tvTotalPoints.text = "Total Points: $pts pts"
+                tvTotalPoints.text = "Total Points: ${String.format("%.2f", pts)} pts"
                 // Refresh adapter with updated user points
                 rewardAdapter.updateUserPoints(pts.toInt())
 

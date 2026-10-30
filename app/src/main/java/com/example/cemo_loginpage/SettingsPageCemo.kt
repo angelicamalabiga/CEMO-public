@@ -133,6 +133,7 @@ class SettingsPageCemo : AppCompatActivity() {
                 .setMessage("Are you sure you want to log out?")
                 .setPositiveButton("Log Out") { _, _ ->
 
+                    ClaimNotifier.stop()
                     auth.signOut()
 
 
@@ -362,6 +363,16 @@ class SettingsPageCemo : AppCompatActivity() {
         val etNew = dialogView.findViewById<EditText>(R.id.etNewPassword)
         val etConfirm = dialogView.findViewById<EditText>(R.id.etConfirmPassword)
         val tvForgot = dialogView.findViewById<TextView>(R.id.tvForgotPassword)
+        val pbStrength = dialogView.findViewById<android.widget.ProgressBar>(R.id.pbPasswordStrength)
+        val tvStrength = dialogView.findViewById<TextView>(R.id.tvPasswordStrength)
+
+        etNew.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                PasswordStrengthHelper.bind(s?.toString() ?: "", pbStrength, tvStrength)
+            }
+        })
 
         val dialog = AlertDialog.Builder(this)
             .setTitle("Change Password")
@@ -399,6 +410,9 @@ class SettingsPageCemo : AppCompatActivity() {
                     }
                     newPassword.length < 6 -> {
                         Toast.makeText(this, "New password must be at least 6 characters.", Toast.LENGTH_SHORT).show()
+                    }
+                    PasswordStrengthHelper.isWeak(newPassword) -> {
+                        Toast.makeText(this, "Your password is too weak.", Toast.LENGTH_LONG).show()
                     }
                     newPassword != confirmPassword -> {
                         Toast.makeText(this, "New password and retype password do not match.", Toast.LENGTH_SHORT).show()
